@@ -42,4 +42,18 @@ irty_Ergebnis4.tsv
 # Deshalb wende ich den obigen Befehl auf diesen Ausdruck an.
 # Dieses Ergebnis wird in einer neuen Datei "2020-05-23-Article_list_dirty_Ergebnis5.tsv" gespeichert.
 
+sed 's/ISSN://g' 2020-05-23-Article_list_dirty_Ergebnis4.tsv > 2020-05-23-Article_list_dirty_Ergebnis5.tsv 
 
+# Nun möchte ich in der Auflistung die doppelten Einträge herauslöschen.
+# Dafür nutze ich den Befehl "sort" und "-u".
+# Dieses Ergebnis wird in einer neuen Datei "2020-05-23-Article_list_dirty_Ergebnis6.tsv" gespeichert.
+
+sort -u 2020-05-23-Article_list_dirty_Ergebnis5.tsv > 2020-05-23-Article_list_dirty_Ergebnis6.tsv  
+
+# Nun möchte ich in der Auflistung die ISSNs sortieren.
+# Dafür nutze ich den Befehl "sort" und "-n".
+# Dieses Ergebnis wird in einer finalen Datei "2020-05-23-Dates_and_ISSNs.tsv" gespeichert.
+
+sort -n 2020-05-23-Article_list_dirty_Ergebnis6.tsv > 2020-05-23-Dates_and_ISSNs.tsv 
+
+# Dies ist nun die vollkommen bereinigte Datei.
