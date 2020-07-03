@@ -35,8 +35,7 @@ sed '/^\s*$/d' 2020-05-23-Article_list_dirty_Ergebnis2.tsv > 2020-05-23-Article_
 # Dafür wende ich wieder den Befehl "sed" sowie "s" an und lösche mithilfe von regulären Ausdrücken die dadurch entstehenden Leerzeilen.
 # Dieses Ergebnis wird in einer neuen Datei "2020-05-23-Article_list_dirty_Ergebnis4.tsv" gespeichert.
 
-sed 's/issn:\s//g;s/Issn:\s //g;s/ISSN:\s//g' 2020-05-23-Article_list_dirty_Ergebnis3.tsv > 2020-05-23-Article_list_d
-irty_Ergebnis4.tsv
+sed 's/issn:\s//g;s/Issn:\s //g;s/ISSN:\s//g' 2020-05-23-Article_list_dirty_Ergebnis3.tsv > 2020-05-23-Article_list_dirty_Ergebnis4.tsv
 
 # Dies betrifft leider nicht die Ausdrücke "ISSN:".
 # Deshalb wende ich den obigen Befehl auf diesen Ausdruck an.
