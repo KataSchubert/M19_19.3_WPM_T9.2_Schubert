@@ -18,3 +18,15 @@ less -S 2020-05-23-Article_list_dirty.tsv
 # Dieses Ergebnis wird in einer neuen Datei "2020-05-23-Article_list_dirty_Ergebnis1.tsv" gespeichert.
 
 cut -f 5,12 2020-05-23-Article_list_dirty.tsv > 2020-05-23-Article_list_dirty_Ergebnis1.tsv
+
+# Die neue Datei enthält nun nur noch ISSN-Nummern und das Date. Allerdings ist diese Auflistung noch nicht sauber, sondern voller Leerzeilen und unsauberen ISSNs.
+# Im ersten Schritt möchte ich nun die Zeilen löschen, die "eng" enthalten. Dafür nutze ich den Befehl "sed" sowie "d" und lösche die Zeilen, die den Begriff "eng" enthalten.
+# Dieses Ergebnis wird in einer neuen Datei "2020-05-23-Article_list_dirty_Ergebnis2.tsv" gespeichert.
+
+sed '/eng/d' 2020-05-23-Article_list_dirty_Ergebnis1.tsv > 2020-05-23-Article_list_dirty_Ergebnis2.tsv
+
+# Nun geht es daran, die Leerzeilen zu löschen, die nur Tabs enthalten. 
+# Dazu nutze ich wiederum den Befehl "sed" und lösche mithilfe von regulären Ausdrücken die Leerzeilen.
+# Dieses Ergebnis wird in einer neuen Datei "2020-05-23-Article_list_dirty_Ergebnis3.tsv" gespeichert.
+
+sed '/^\s*$/d' 2020-05-23-Article_list_dirty_Ergebnis2.tsv > 2020-05-23-Article_list_dirty_Ergebnis3.tsv 
