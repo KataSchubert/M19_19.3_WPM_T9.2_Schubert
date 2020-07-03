@@ -30,3 +30,16 @@ sed '/eng/d' 2020-05-23-Article_list_dirty_Ergebnis1.tsv > 2020-05-23-Article_li
 # Dieses Ergebnis wird in einer neuen Datei "2020-05-23-Article_list_dirty_Ergebnis3.tsv" gespeichert.
 
 sed '/^\s*$/d' 2020-05-23-Article_list_dirty_Ergebnis2.tsv > 2020-05-23-Article_list_dirty_Ergebnis3.tsv 
+
+# Im nächsten Schritt möchte ich alle "issn: ", "Issn: " und "ISSN: " samt Leerzeichen aus der Auflistung löschen.
+# Dafür wende ich wieder den Befehl "sed" sowie "s" an und lösche mithilfe von regulären Ausdrücken die dadurch entstehenden Leerzeilen.
+# Dieses Ergebnis wird in einer neuen Datei "2020-05-23-Article_list_dirty_Ergebnis4.tsv" gespeichert.
+
+sed 's/issn:\s//g;s/Issn:\s //g;s/ISSN:\s//g' 2020-05-23-Article_list_dirty_Ergebnis3.tsv > 2020-05-23-Article_list_d
+irty_Ergebnis4.tsv
+
+# Dies betrifft leider nicht die Ausdrücke "ISSN:".
+# Deshalb wende ich den obigen Befehl auf diesen Ausdruck an.
+# Dieses Ergebnis wird in einer neuen Datei "2020-05-23-Article_list_dirty_Ergebnis5.tsv" gespeichert.
+
+
